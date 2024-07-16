@@ -1,7 +1,0 @@
-package com.generation.blogpessoal.model;
-
-import java.time.LocalDateTime;
-
-public class Postagem {
-
-}
