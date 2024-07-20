@@ -51,7 +51,7 @@ public class UsuarioControllerTest {
 	public void deveCriarUmUsuario() {
 
 		HttpEntity<Usuario> corpoRequisicao = new HttpEntity<Usuario>(new Usuario(0L,
-				"Paulo Antunes", "paulo.antunes@email.com", "1345678", "-"));
+				"Paulo Antunes", "paulo.antunes@email.com", "13456788", "-"));
 
 		ResponseEntity<Usuario> corpoResposta = testRestTemplate
 				.exchange("/usuarios/cadastrar", HttpMethod.POST,corpoRequisicao, Usuario.class);
@@ -71,7 +71,7 @@ public class UsuarioControllerTest {
 				"Laura Silva", "laura.silva@email.com.br", "97586-4510", "-"));
 
 		ResponseEntity<Usuario> corpoResposta = testRestTemplate
-				.exchange("/usuario/cadastrar", HttpMethod.POST,corpoRequisicao, Usuario.class);
+				.exchange("/usuarios/cadastrar", HttpMethod.POST,corpoRequisicao, Usuario.class);
 
 		assertEquals(HttpStatus.BAD_REQUEST, corpoResposta.getStatusCode());
 	}
@@ -90,7 +90,7 @@ public class UsuarioControllerTest {
 
 		ResponseEntity<Usuario> corpoResposta = testRestTemplate
 				.withBasicAuth("root@root.com", "rootroot")
-				.exchange("/usuario/atualizar", HttpMethod.PUT, corpoRequisicao, Usuario.class);
+				.exchange("/usuarios/atualizar", HttpMethod.PUT, corpoRequisicao, Usuario.class);
 
 		assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
 	}

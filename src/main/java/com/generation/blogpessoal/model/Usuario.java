@@ -53,7 +53,7 @@ public class Usuario {
 	
 	public Usuario() { }
 	
-	/* Getters e Setters inseridos abaixo */
+	/* Getters e Setters do que esriver dentro dos parênteses inseridos abaixo */
 
 	public Long getId() {
 		return this.id;
